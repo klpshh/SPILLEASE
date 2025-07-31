@@ -23,7 +23,7 @@ A beginner-friendly, modern web application for splitting bills with friends and
 1. Clone or download this project
 2. Navigate to the project directory:
    ```bash
-   cd splitease
+   cd spillease
    ```
 
 3. Install dependencies:
