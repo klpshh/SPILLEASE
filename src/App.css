@@ -1,0 +1,548 @@
+/* SplitEase - Modern Bill Splitter App Styles */
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Main app container */
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Header styles */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeInDown 0.8s ease-out;
+  width: 100%;
+  max-width: 600px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+  font-style: italic;
+}
+
+/* Main content area */
+.main {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: slideInUp 0.8s ease-out;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Add bill button */
+.add-bill-btn {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+  margin-bottom: 30px;
+}
+
+.add-bill-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255,107,107,0.6);
+}
+
+/* Bill form styles */
+.bill-form {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  border: 2px solid #e9ecef;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.bill-form h2 {
+  color: #495057;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #495057;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #dee2e6;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+}
+
+/* Members section */
+.members-section {
+  margin-top: 25px;
+}
+
+.members-section h3 {
+  color: #495057;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.member-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.member-row input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.remove-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.remove-btn:hover {
+  background: #c82333;
+}
+
+.member-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.member-actions button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.member-actions button:hover {
+  background: #218838;
+  transform: translateY(-1px);
+}
+
+/* Form actions */
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+  justify-content: center;
+}
+
+.save-btn {
+  background: linear-gradient(45deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(40,167,69,0.4);
+}
+
+.cancel-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background: #5a6268;
+}
+
+/* Bills section */
+.bills-section {
+  margin-top: 30px;
+}
+
+.bills-section h2 {
+  color: #495057;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Bill cards */
+.bill-card {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.bill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.bill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f8f9fa;
+}
+
+.bill-header h3 {
+  color: #495057;
+  font-size: 1.3rem;
+}
+
+.bill-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.bill-actions button {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.bill-actions button:hover {
+  background: #5a6268;
+}
+
+.bill-details {
+  margin-bottom: 15px;
+}
+
+.bill-details p {
+  color: #6c757d;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+/* Members list */
+.members-list {
+  margin-bottom: 20px;
+}
+
+.members-list h4 {
+  color: #495057;
+  margin-bottom: 10px;
+}
+
+.member-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.member-item.paid {
+  background: #d4edda;
+  border-left: 4px solid #28a745;
+}
+
+.member-item.unpaid {
+  background: #f8d7da;
+  border-left: 4px solid #dc3545;
+}
+
+.member-item span {
+  font-weight: 500;
+}
+
+.payment-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.payment-btn.paid {
+  background: #28a745;
+  color: white;
+}
+
+.payment-btn.unpaid {
+  background: #dc3545;
+  color: white;
+}
+
+.payment-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Settlements */
+.settlements {
+  background: #e3f2fd;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.settlements h4 {
+  color: #1976d2;
+  margin-bottom: 10px;
+}
+
+.settlements p {
+  color: #424242;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+/* Reminder button */
+.reminder-btn {
+  background: linear-gradient(45deg, #ff9800, #ff5722);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(255,152,0,0.3);
+}
+
+.reminder-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255,152,0,0.5);
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+}
+
+.empty-state h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #495057;
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .app {
+    padding: 10px;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .main {
+    padding: 20px;
+  }
+  
+  .member-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .member-row input {
+    width: 100%;
+  }
+  
+  .member-actions {
+    flex-direction: column;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .bill-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .member-item {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .header p {
+    font-size: 1rem;
+  }
+  
+  .main {
+    padding: 15px;
+  }
+  
+  .bill-form {
+    padding: 20px;
+  }
+  
+  .bill-card {
+    padding: 15px;
+  }
+}
+
+/* Fun hover effects */
+.bill-card:hover .reminder-btn {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Success animations */
+.success {
+  animation: successPulse 0.6s ease-out;
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
